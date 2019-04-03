@@ -12,6 +12,18 @@
  * @package         Lightning_Advanced_Slider
  */
 
+ /*
+  ---------------------------------------------
+	 updater
+ --------------------------------------------- */
+ require 'inc/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://lightning.nagoya/wp-content/vk-data-files/lightning-advanced-slider-73629846/plugin-update-config.json',
+	__FILE__,
+	'lightning-advanced-slider'
+);
+
+
 // Your code starts here.
 define( 'VK_SLIDER_DIR', plugin_dir_path( __FILE__ ) );
 
