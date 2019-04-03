@@ -14,16 +14,23 @@ if ( ! class_exists( 'Vk_Swiper' ) ) {
 			global $vk_swiper;
 			wp_enqueue_style( 'swiper-style', $vk_swiper['url'] . 'dist/css/swiper.min.css', '', VK_SWIPER_VERSION );
 			wp_enqueue_script( 'swiper-js', $vk_swiper['url'] . 'dist/js/swiper.min.js', array(), VK_SWIPER_VERSION, true );
-			$tag     = '';
+			$lightning_theme_options = lightning_get_theme_options();
+
+			if ( empty( $lightning_theme_options['top_slide_time'] ) ) {
+				$interval = 4000;
+			} else {
+				$interval = esc_attr( $lightning_theme_options['top_slide_time'] );
+			}
+
 				$tag = "
 				var swiper = new Swiper('.swiper-container', {
 					spaceBetween: 30,
 					loop:true,
 					autoplay: {
-						delay: 2500,
+						delay: " . $interval . ",
 						disableOnInteraction: false,
 					},
-					effect: 'flip',
+					effect: 'coverflow',
 					// slide / fade / cube / coverflow / flip
 					pagination: {
 						el: '.swiper-pagination',
