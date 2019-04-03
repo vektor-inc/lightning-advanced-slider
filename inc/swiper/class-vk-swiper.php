@@ -12,8 +12,8 @@ if ( ! class_exists( 'Vk_Swiper' ) ) {
 
 		public static function load_swiper() {
 			global $vk_swiper;
-			wp_enqueue_style( 'swiper-style', $vk_swiper['url'] . 'dist/css/swiper.min.css', '', VK_SWIPER_VERSION );
-			wp_enqueue_script( 'swiper-js', $vk_swiper['url'] . 'dist/js/swiper.min.js', array(), VK_SWIPER_VERSION, true );
+			wp_enqueue_style( 'swiper-style', $vk_swiper['url'] . 'assets/css/vk_swiper.css', '', VK_SWIPER_VERSION );
+			wp_enqueue_script( 'swiper-js', $vk_swiper['url'] . 'assets/js/swiper.min.js', array(), VK_SWIPER_VERSION, true );
 		}
 
 		public static function swiper_paras_json( $paras = '' ) {

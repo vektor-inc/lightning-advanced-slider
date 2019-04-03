@@ -30,7 +30,7 @@ if ( $top_slide_count ) : ?>
 		if ( ! empty( $lightning_theme_options[ 'top_slide_image_' . $i ] ) ) {
 			$link_target = ( isset( $lightning_theme_options[ 'top_slide_link_blank_' . $i ] ) && $lightning_theme_options[ 'top_slide_link_blank_' . $i ] ) ? ' target="_blank"' : '';
 			?>
-			<div class="swiper-slide swiper-slide-<?php echo $i; ?>">
+			<div class="swiper-slide item-<?php echo $i; ?>">
 
 				<?php if ( lightning_is_slide_outer_link( $lightning_theme_options, $i ) ) : ?>
 						<a href="<?php echo esc_url( $lightning_theme_options[ 'top_slide_url_' . $i ] ); ?>"<?php echo $link_target; ?>>
