@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:     Lightning Advanced Slider
- * Plugin URI:      PLUGIN SITE HERE
- * Description:     PLUGIN DESCRIPTION HERE
- * Author:          YOUR NAME HERE
- * Author URI:      YOUR SITE HERE
+ * Plugin URI:      https://lightning.nagoya/
+ * Description:
+ * Author:          Vektor,Inc.
+ * Author URI:      https://lightning.nagoya/
  * Text Domain:     lightning-advanced-slider
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.0.0
  *
  * @package         Lightning_Advanced_Slider
  */

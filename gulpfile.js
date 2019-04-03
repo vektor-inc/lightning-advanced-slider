@@ -75,6 +75,7 @@ gulp.task('dist', function() {
         "!./**/compile.bat",
 				"!./tests/**",
 				"!./dist/**",
+				"!./inc/swiper-master/**",
 				"!./node_modules/**/*.*"
 			], {
 				base: './'
