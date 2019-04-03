@@ -19,6 +19,7 @@ if ( ! class_exists( 'Vk_Swiper' ) ) {
 		public static function swiper_paras_json( $paras = '' ) {
 
 			$default = array(
+				// 'slidesPerView' => 3,
 				'spaceBetween' => 30,
 				'loop'         => true,
 				'autoplay'     => array(
