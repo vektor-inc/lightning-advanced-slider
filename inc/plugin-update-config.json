@@ -1,0 +1,27 @@
+{
+	"name": "Lightning Advanced Slider",
+	"version": "0.0.0",
+	"download_url": "https://lightning.nagoya/wp-content/vk-data-files/lightning-advanced-slider-73629846/lightning-advanced-slider.zip",
+
+	"homepage": "https://lightning.nagoya/ja/",
+	"requires": "4.5",
+	"tested": "5.1.2",
+	"last_updated": "2019-04-04 00:17:00",
+	"upgrade_notice": "Here's why you should upgrade...",
+
+	"author": "Vektor,Inc.",
+	"author_homepage": "https://www.vektor-inc.co.jp",
+
+	"sections": {
+		"description": "This plugin is an extended slide for WordPress theme Lightning.",
+		"installation": "",
+		"changelog": "<h4>0.0.0</h4><ul><li>1st release</li></ul>",
+		"custom_section": ""
+	},
+
+	"rating": 80,
+	"num_ratings": 5,
+
+	"downloaded": 1234,
+	"active_installs": 1000000
+}

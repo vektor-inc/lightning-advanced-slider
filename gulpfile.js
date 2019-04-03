@@ -46,16 +46,6 @@ gulp.task('sass', function() {
 // 		.pipe(gulp.dest('./js'));
 // });
 
-// Watch
-// gulp.task('watch', function() {
-// 	// gulp.watch('./*.php', ['dist']);
-// 	//
-// 	gulp.watch(path.join(assetsPath, '**/_scss/**/*.scss'), ['sass']);
-// });
-// //
-// gulp.task('default', ['watch']);
-//
-
 gulp.task('default', function() {
 	// gulp.watch('./js/common.js', ['jsmin', 'dist']);
   gulp.watch('./inc/swiper/assets/_scss/*.scss',gulp.task('sass'));
