@@ -1,11 +1,11 @@
 {
 	"name": "Lightning Advanced Slider",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"download_url": "https://lightning.nagoya/wp-content/vk-data-files/lightning-advanced-slider-73629846/lightning-advanced-slider.zip",
 
 	"homepage": "https://lightning.nagoya/ja/",
 	"requires": "4.5",
-	"tested": "5.1.2",
+	"tested": "5.1.1",
 	"last_updated": "2019-04-04 00:17:00",
 	"upgrade_notice": "Here's why you should upgrade...",
 
@@ -15,7 +15,7 @@
 	"sections": {
 		"description": "This plugin is an extended slide for WordPress theme Lightning.",
 		"installation": "",
-		"changelog": "<h4>0.1.1</h4><ul><li>説明文修正</li><h4>0.1.0</h4><ul><li>編集ショートカットアイコンの位置修正</li></ul><h4>0.0.0</h4><ul><li>1st release</li></ul>",
+		"changelog": "<h4>0.1.2</h4><ul><li>PHPエラー修正</li><h4>0.1.1</h4><ul><li>説明文修正</li><h4>0.1.0</h4><ul><li>編集ショートカットアイコンの位置修正</li></ul><h4>0.0.0</h4><ul><li>1st release</li></ul>",
 		"custom_section": ""
 	},
 
