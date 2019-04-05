@@ -12,17 +12,21 @@ add_filter( 'lightning_top_slide_count', 'las_kill_lightning_top_slide_count' );
 
 // スライドショーを出力
 function las_front_page_slide() {
-	if ( ! is_front_page() ) {
-		return false;
+	if ( is_front_page() && function_exists( 'lightning_get_theme_options' ) ) {
+		require_once( 'module_slide.php' );
 	}
-	require_once( 'module_slide.php' );
 }
 add_action( 'lightning_header_after', 'las_front_page_slide' );
 
 
 add_action( 'wp_enqueue_scripts', 'las_front_slide' );
 function las_front_slide() {
-	$lightning_theme_options = lightning_get_theme_options();
+
+	if ( function_exists( 'lightning_get_theme_options' ) ) {
+		$lightning_theme_options = lightning_get_theme_options();
+	} else {
+		$lightning_theme_options = get_option( 'lightning_theme_options' );
+	}
 
 	if ( empty( $lightning_theme_options['top_slide_time'] ) ) {
 		$paras['autoplay']['delay'] = 4000;
