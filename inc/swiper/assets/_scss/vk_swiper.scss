@@ -2,21 +2,24 @@
 /* swiper.css でも swiper.min.css でもまぁどっちでも良い */
 @import "swiper.css";
 
-.swiper-button-next,
-.swiper-button-prev {
-width:14px;
-height:22px;
-margin-top:-11px;
-background-size:14px 22px;
-}
-.swiper-button-next {
-	right:20px;
-}
-.swiper-button-prev {
-	left:20px;
-}
+.swiper-container {
+	.swiper-button-next,
+	.swiper-button-prev {
+	width:14px;
+	height:22px;
+	margin-top:-11px;
+	background-size:14px 22px;
+	@media (max-width: 767px){ display: none; }
+	}
+	.swiper-button-next {
+		right:15px;
+	}
+	.swiper-button-prev {
+		left:15px;
+	}
 
-.swiper-slide .customize-partial-edit-shortcut {
-	left:50%;
-	top:10px;
+	.swiper-slide .customize-partial-edit-shortcut {
+		left:50%;
+		top:10px;
+	}
 }
