@@ -27,6 +27,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 // Your code starts here.
 define( 'VK_SLIDER_DIR', plugin_dir_path( __FILE__ ) );
 
-// require_once( VK_SLIDER_DIR . 'inc/term-color-config.php' );
-require_once( 'inc/config-swiper.php' );
+// swiperを利用する時の共通ライブラリ
+require_once( 'inc/swiper/config-swiper.php' );
+// Lightning 専用ファイルの読み込み
 require_once( 'inc/top-slide/top-slide.php' );
