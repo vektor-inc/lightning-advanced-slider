@@ -2,12 +2,12 @@
 /**
  * Plugin Name:     Lightning Advanced Slider
  * Plugin URI:      https://lightning.nagoya/
- * Description:         Lightning用の新しいスライダーの先行開発版です。スライダープラグインとして非常に評価の高いswiperを使用しています。標準のLightningではスライドエフェクトが「スライド」しか使えませんが、このプラグインを有効化すると 外観 > カスタマイズ 画面「Lighhtning スライドショー」パネルよりフェードなどが選択できるようになります。
+ * Description:     Lightning用の新しいスライダーの先行開発版です。スライダープラグインとして非常に評価の高いswiperを使用しています。標準のLightningではスライドエフェクトが「スライド」しか使えませんが、このプラグインを有効化すると 外観 > カスタマイズ 画面「Lighhtning スライドショー」パネルよりフェードなどが選択できるようになります。
  * Author:          Vektor,Inc.
  * Author URI:      https://lightning.nagoya/
  * Text Domain:     lightning-advanced-slider
  * Domain Path:     /languages
- * Version:         0.1.3
+ * Version:         0.2.0
  *
  * @package         Lightning_Advanced_Slider
  */
