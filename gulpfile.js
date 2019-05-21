@@ -26,13 +26,13 @@ var plumber = require('gulp-plumber');
 
 gulp.task('sass', function() {
 	// gulp.src(path.join(assetsPath, '_scss/style.scss'))
-	return gulp.src('./inc/swiper/assets/_scss/*.scss')
+	return gulp.src('./inc/swiper/package/assets/_scss/*.scss')
 		.pipe(plumber())
 		.pipe(sass())
 		// .pipe(cmq({log:true}))
 		.pipe(autoprefixer())
 		.pipe(cleanCss())
-		.pipe(gulp.dest('./inc/swiper/assets/css/'));
+		.pipe(gulp.dest('./inc/swiper/package/assets/css/'));
 });
 
 // js最小化
@@ -48,7 +48,7 @@ gulp.task('sass', function() {
 
 gulp.task('default', function() {
 	// gulp.watch('./js/common.js', ['jsmin', 'dist']);
-  gulp.watch('./inc/swiper/assets/_scss/*.scss',gulp.task('sass'));
+  gulp.watch('./inc/swiper/package/assets/_scss/*.scss',gulp.task('sass'));
 });
 
 // copy dist ////////////////////////////////////////////////

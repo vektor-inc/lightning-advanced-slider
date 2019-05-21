@@ -9,18 +9,32 @@ function las_kill_lightning_top_slide_count() {
 }
 add_filter( 'lightning_top_slide_count', 'las_kill_lightning_top_slide_count' );
 
+/*
+	スライド本体読み込み
+/*-------------------------------------------*/
+require_once( 'top-slide-view.php' );
 
-// スライドショーを出力
+/*
+	Lightningトップページにスライドを出力
+/*-------------------------------------------*/
 function las_front_page_slide() {
 	if ( is_front_page() && function_exists( 'lightning_get_theme_options' ) ) {
-		require_once( 'module_slide.php' );
+		echo las_get_slide_html();
 	}
 }
 add_action( 'lightning_header_after', 'las_front_page_slide' );
 
+/*
+	ショートコード
+/*-------------------------------------------*/
+add_shortcode( 'lightning_slide', 'las_get_slide_html' );
 
-add_action( 'wp_enqueue_scripts', 'las_front_slide' );
-function las_front_slide() {
+
+/*
+	スライド用の js 設定値を出力
+/*-------------------------------------------*/
+add_action( 'wp_enqueue_scripts', 'las_add_slide_script' );
+function las_add_slide_script() {
 
 	if ( function_exists( 'lightning_get_theme_options' ) ) {
 		$lightning_theme_options = lightning_get_theme_options();
@@ -47,7 +61,9 @@ function las_front_slide() {
 	wp_add_inline_script( 'swiper-js', $tag, 'after' );
 }
 
-
+/*
+	swiper用のカスタマイズ項目
+/*-------------------------------------------*/
 add_action( 'customize_register', 'las_customize_register_top_slide_swiper' );
 function las_customize_register_top_slide_swiper( $wp_customize ) {
 	// Slide interval time
