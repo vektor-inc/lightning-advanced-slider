@@ -42,6 +42,12 @@ function las_add_slide_script() {
 		$lightning_theme_options = get_option( 'lightning_theme_options' );
 	}
 
+	$top_slide_count = lightning_top_slide_count( $lightning_theme_options );
+
+	if ( $top_slide_count < 2 ) {
+		$paras['loop'] = false;
+	}
+
 	if ( empty( $lightning_theme_options['top_slide_time'] ) ) {
 		$paras['autoplay']['delay'] = 4000;
 	} else {
