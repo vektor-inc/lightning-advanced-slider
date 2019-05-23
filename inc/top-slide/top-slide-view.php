@@ -8,13 +8,13 @@ function las_get_slide_html() {
 	$top_slide_count_max = lightning_top_slide_count_max();
 	$top_slide_count     = lightning_top_slide_count( $lightning_theme_options );
 	// $top_slide_count     = apply_filters( 'lightning_top_slide_count', $top_slide_count );
-
 	$top_slide_html = '';
 
 	if ( $top_slide_count ) {
 
 		$top_slide_html .= '<div class="swiper-container slide">';
-		$top_slide_html .= '<div class="swiper-wrapper">';
+		// slide-inner は JPNSTYLEのjs制御で使用
+		$top_slide_html .= '<div class="swiper-wrapper slide-inner">';
 
 		// Why end point is $top_slide_count_max that not $top_slide_count, image exist 1,2,5
 		for ( $i = 1; $i <= $top_slide_count_max;$i++ ) {
@@ -53,8 +53,8 @@ function las_get_slide_html() {
 				$top_slide_html .= '<img src="' . esc_attr( $lightning_theme_options[ 'top_slide_image_' . $i ] ) . '" alt="' . esc_attr( $top_slide_alt ) . '" class="slide-item-img">';
 				$top_slide_html .= '</picture>';
 
-				/*-------------------------------------------*/
-				/*	slide-cover
+				/*
+				  slide-cover
 				/*-------------------------------------------*/
 
 				$cover_style = lightning_slide_cover_style( $lightning_theme_options, $i );
@@ -68,8 +68,8 @@ function las_get_slide_html() {
 					$top_slide_html .= '</a>';
 				}
 
-				/*-------------------------------------------*/
-				/*	mini_content
+				/*
+				  mini_content
 				/*-------------------------------------------*/
 
 				$mini_content_args['style_class']  = 'mini-content-' . $i;
@@ -86,7 +86,6 @@ function las_get_slide_html() {
 				$mini_content_args['shadow_color'] = ( ! empty( $lightning_theme_options[ 'top_slide_text_shadow_color_' . $i ] ) ) ? $lightning_theme_options[ 'top_slide_text_shadow_color_' . $i ] : '#fff';
 
 				// lightning_mini_content( $mini_content_args );
-
 				$style = '';
 				if ( $mini_content_args['align'] ) {
 					$style = ' style="text-align:' . esc_attr( $mini_content_args['align'] ) . '"';
@@ -161,7 +160,7 @@ function las_get_slide_html() {
 
 		$top_slide_html .= '</div><!-- [ /.swiper-wrapper ] -->';
 		if ( $top_slide_count >= 2 ) {
-			//  Add Pagination
+			// Add Pagination
 			$top_slide_html .= '<div class="swiper-pagination swiper-pagination-white"></div>';
 			// Add Arrows
 			$top_slide_html .= '<div class="swiper-button-next swiper-button-white"></div>';
