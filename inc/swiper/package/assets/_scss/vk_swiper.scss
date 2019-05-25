@@ -3,6 +3,7 @@
 @import "swiper.css";
 
 .swiper-container {
+	width:100%; // これがないと IE11で表示が崩れる
 	.swiper-button-next,
 	.swiper-button-prev {
 	width:14px;
