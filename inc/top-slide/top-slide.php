@@ -60,6 +60,10 @@ function las_add_slide_script() {
 		$paras['effect'] = esc_attr( $lightning_theme_options['top_slide_effect'] );
 	}
 
+	if ( ! empty( $lightning_theme_options['top_slide_speed'] ) ) {
+		$paras['speed'] = intval( $lightning_theme_options['top_slide_speed'] );
+	}
+
 	$swiper_paras = Vk_Swiper::swiper_paras_json( $paras );
 
 	$tag = "var swiper = new Swiper('.swiper-container', " . $swiper_paras . ');';
@@ -72,6 +76,34 @@ function las_add_slide_script() {
 /*-------------------------------------------*/
 add_action( 'customize_register', 'las_customize_register_top_slide_swiper' );
 function las_customize_register_top_slide_swiper( $wp_customize ) {
+
+	/*	Add text control description
+	/*-------------------------------------------*/
+	/*
+	Lighhtning本体にも Custom_Text_Control はあるが、旧バージョンにはなく、
+	条件分岐でどのみち書く必要があり複雑化するだけなので、こちらにも新たに定義
+	 */
+	class LAS_Custom_Text_Control extends WP_Customize_Control {
+		public $type         = 'customtext';
+		public $description  = ''; // we add this for the extra description
+		public $input_before = '';
+		public $input_after  = '';
+		public function render_content() {
+		?>
+		<label>
+		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+		<?php $style = ( $this->input_before || $this->input_after ) ? ' style="width:50%"' : ''; ?>
+		<div>
+		<?php echo wp_kses_post( $this->input_before ); ?>
+		<input type="text" value="<?php echo esc_attr( $this->value() ); ?>"<?php echo $style; ?> <?php $this->link(); ?> />
+		<?php echo wp_kses_post( $this->input_after ); ?>
+		</div>
+		<div><?php echo $this->description; ?></div>
+	</label>
+	<?php
+		} // public function render_content() {
+	} // class LAS_Custom_Text_Control extends WP_Customize_Control
+
 	// Slide interval time
 	$wp_customize->add_setting(
 		'lightning_theme_options[top_slide_effect]', array(
@@ -98,6 +130,30 @@ function las_customize_register_top_slide_swiper( $wp_customize ) {
 			'priority'    => 604,
 			'description' => '',
 			'input_after' => '',
+		)
+	);
+
+	// Slide transition time
+	$wp_customize->add_setting(
+		'lightning_theme_options[top_slide_speed]', array(
+			'default'           => 1000,
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'lightning_sanitize_number',
+		)
+	);
+
+	$wp_customize->add_control(
+		new LAS_Custom_Text_Control(
+			$wp_customize, 'top_slide_speed', array(
+				'label'       => __( 'Slide transition time', 'lightning' ),
+				'section'     => 'lightning_slide',
+				'settings'    => 'lightning_theme_options[top_slide_speed]',
+				'type'        => 'text',
+				'priority'    => 605,
+				'description' => '',
+				'input_after' => __( 'millisecond', 'lightning' ),
+			)
 		)
 	);
 }
