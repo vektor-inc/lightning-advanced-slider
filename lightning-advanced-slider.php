@@ -7,7 +7,7 @@
  * Author URI:      https://lightning.nagoya/
  * Text Domain:     lightning-advanced-slider
  * Domain Path:     /languages
- * Version:         0.2.2
+ * Version:         0.3.0
  *
  * @package         Lightning_Advanced_Slider
  */

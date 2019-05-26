@@ -3,8 +3,8 @@ Contributors: kurudrive
 Donate link: https://lightning.nagoya/ja/
 Tags: slider
 Requires at least: 4.5
-Tested up to: 5.2.0
-Stable tag: 0.2.2
+Tested up to: 5.2.1
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,10 @@ e.g.
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
 == Changelog ==
+
+= 0.3.0 =
+[ Add function ] Add transition time setting.
+[ Bugfix ] IE11
 
 = 0.2.1 =
 [ Bugfix ] When slide count is only one that kill loop function.
