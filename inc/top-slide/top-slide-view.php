@@ -122,7 +122,7 @@ function las_get_slide_html() {
 					// If Text caption exist
 				if ( $mini_content_args['caption'] ) {
 					$top_slide_html .= '<div class="slide-text-caption"' . $font_style . '>';
-					$top_slide_html .= nl2br( esc_textarea( $mini_content_args['caption'] ) );
+					$top_slide_html .= nl2br( wp_kses_post( $mini_content_args['caption'] ) );
 					$top_slide_html .= '</div>';
 				}
 
