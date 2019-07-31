@@ -23,11 +23,22 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'lightning-advanced-slider'
 );
 
-
 // Your code starts here.
 define( 'VK_SLIDER_DIR', plugin_dir_path( __FILE__ ) );
 
-// swiperを利用する時の共通ライブラリ
-require_once( 'inc/swiper/config-swiper.php' );
-// Lightning 専用ファイルの読み込み
-require_once( 'inc/top-slide/top-slide.php' );
+/*
+ ---------------------------------------------
+	Plugin Theme Activation
+--------------------------------------------- */
+add_action( 'after_setup_theme', 'las_plugin_active' );
+function las_plugin_active() {
+	// テーマがLightning系じゃなかったら処理を終了
+	if ( ! function_exists( 'lightning_get_theme_name' ) ) {
+		return;
+	} else {
+		// swiperを利用する時の共通ライブラリ
+		require_once( 'inc/swiper/config-swiper.php' );
+		// Lightning 専用ファイルの読み込み
+		require_once( 'inc/top-slide/top-slide.php' );
+	}
+}
