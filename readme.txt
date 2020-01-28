@@ -4,7 +4,7 @@ Donate link: https://lightning.nagoya/ja/
 Tags: slider
 Requires at least: 4.5
 Tested up to: 5.2.1
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
