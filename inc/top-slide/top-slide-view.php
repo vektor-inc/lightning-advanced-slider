@@ -12,7 +12,7 @@ function las_get_slide_html() {
 
 	if ( $top_slide_count ) {
 
-		$top_slide_html .= '<div class="swiper-container slide">';
+		$top_slide_html .= '<div class="swiper-container slide slide-main">';
 		$top_slide_html .= '<div class="swiper-wrapper slide-inner">';
 
 		// Why end point is $top_slide_count_max that not $top_slide_count, image exist 1,2,5
