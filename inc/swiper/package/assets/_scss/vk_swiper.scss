@@ -3,28 +3,30 @@
 @import "swiper.css";
 
 .swiper-container {
-	width:100vw; // これがないと IE11で表示が崩れる / コンテンツエリアのウィジェット
+	width: 100vw; // これがないと IE11で表示が崩れる / コンテンツエリアのウィジェット
 	.swiper-button-next,
 	.swiper-button-prev {
-	width:14px;
-	height:22px;
-	margin-top:-11px;
-	background-size:14px 22px;
-	@media (max-width: 767px){ display: none; }
+		width: 14px;
+		height: 22px;
+		margin-top: -11px;
+		background-size: 14px 22px;
+		@media (max-width: 767px) {
+			display: none;
+		}
 	}
 	.swiper-button-next {
-		right:15px;
+		right: 15px;
 	}
 	.swiper-button-prev {
-		left:15px;
+		left: 15px;
 	}
 
 	.swiper-slide .customize-partial-edit-shortcut {
-		left:50%;
-		top:10px;
+		left: 50%;
+		top: 10px;
 	}
 }
 .mainSection .swiper-container.slide {
-		margin-left:calc( 50% - 50vw);
-		margin-right:calc( 50% - 50vw);
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
 }
