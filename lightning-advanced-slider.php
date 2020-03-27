@@ -7,7 +7,7 @@
  * Author URI:      https://lightning.nagoya/
  * Text Domain:     lightning-advanced-slider
  * Domain Path:     /languages
- * Version:         0.4.2
+ * Version:         0.5.0
  *
  * @package         Lightning_Advanced_Slider
  */
@@ -18,9 +18,9 @@
 --------------------------------------------- */
 require 'inc/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-'https://github.com/vektor-inc/lightning-advanced-slider',
-__FILE__,
-'lightning-advanced-slider'
+	'https://github.com/vektor-inc/lightning-advanced-slider',
+	__FILE__,
+	'lightning-advanced-slider'
 );
 $myUpdateChecker->setBranch( 'master' );
 
