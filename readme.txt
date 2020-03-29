@@ -3,8 +3,8 @@ Contributors: kurudrive
 Donate link: https://lightning.nagoya/ja/
 Tags: slider
 Requires at least: 4.5
-Tested up to: 5.2.1
-Stable tag: 0.5.0
+Tested up to: 5.3.2
+Stable tag: 0.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,9 @@ e.g.
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
 == Changelog ==
+
+= 0.5.1 =
+Update checker version up
 
 = 0.5.0 =
 [ Specification change ] Cope with header transmission
