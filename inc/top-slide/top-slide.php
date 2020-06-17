@@ -18,7 +18,8 @@ require_once( 'top-slide-view.php' );
 	Lightningトップページにスライドを出力
 /*-------------------------------------------*/
 function las_front_page_slide() {
-	if ( is_front_page() && function_exists( 'lightning_get_theme_options' ) ) {
+	$lightning_theme_options = get_option( 'lightning_theme_options' );
+	if ( is_front_page() && function_exists( 'lightning_get_theme_options' ) && empty( $lightning_theme_options['top_slide_hide'] ) ) {
 		echo las_get_slide_html();
 	}
 }
