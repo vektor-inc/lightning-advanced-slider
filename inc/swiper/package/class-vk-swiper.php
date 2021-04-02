@@ -1,46 +1,34 @@
 <?php
-// Set version number.
-define( 'VK_SWIPER_VERSION', '0.0.0' );
+/**
+ * VK Swiper
+ *
+ * @package Katawara
+ */
 
-if ( ! class_exists( 'Vk_Swiper' ) ) {
+if ( ! class_exists( 'VK_Swiper' ) ) {
 
-	class Vk_Swiper {
+	// Set version number.
+	define( 'SWIPER_VERSION', '5.4.5' );
 
-		static function init() {
+	/**
+	 * VK Swiper
+	 */
+	class VK_Swiper {
+		/**
+		 * Init
+		 */
+		public static function init() {
 			add_action( 'wp_enqueue_scripts', array( __CLASS__, 'load_swiper' ) );
 		}
 
+		/**
+		 * Load Swiper
+		 */
 		public static function load_swiper() {
-			global $vk_swiper;
-			wp_enqueue_style( 'swiper-style', $vk_swiper['url'] . 'assets/css/vk_swiper.css', '', VK_SWIPER_VERSION );
-			wp_enqueue_script( 'swiper-js', $vk_swiper['url'] . 'assets/js/swiper.min.js', array(), VK_SWIPER_VERSION, true );
+			global $vk_swiper_url;
+			wp_enqueue_style( 'vk-swiper-style', $vk_swiper_url . '/assets/css/swiper.min.css', array(), SWIPER_VERSION );
+			wp_enqueue_script( 'vk-swiper-script', $vk_swiper_url . '/assets/js/swiper.min.js', array(), SWIPER_VERSION, true );
 		}
-
-		public static function swiper_paras_json( $paras = '' ) {
-
-			$default = array(
-				// 'slidesPerView' => 3,
-				'spaceBetween' => 30,
-				'loop'         => true,
-				'autoplay'     => array(
-					'delay' => 4000,
-				),
-				'pagination'   => array(
-					'el'        => '.swiper-pagination',
-					'clickable' => true,
-				),
-				'navigation'   => array(
-					'nextEl' => '.swiper-button-next',
-					'prevEl' => '.swiper-button-prev',
-				),
-			);
-
-			$paras = wp_parse_args( $paras, $default );
-			$json  = json_encode( $paras );
-			return $json;
-		}
-
 	}
-	Vk_Swiper::init();
-
-} // if ( ! class_exists( 'Vk_Swiper' ) ) {
+	VK_Swiper::init();
+}
