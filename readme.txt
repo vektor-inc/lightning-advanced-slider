@@ -52,6 +52,7 @@ e.g.
 = 0.6.0 =
 Cope with hide slide Lightning 9.11.0 / Lightning Pro 4.11.0
 
+
 = 0.5.1 =
 Update checker version up
 
