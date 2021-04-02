@@ -65,11 +65,11 @@ function las_add_slide_script() {
 		$paras['speed'] = intval( $lightning_theme_options['top_slide_speed'] );
 	}
 
-	$swiper_paras = Vk_Swiper::swiper_paras_json( $paras );
+	$swiper_paras = swiper_paras_json( $paras );
 
 	$tag = "var swiper = new Swiper('.swiper-container', " . $swiper_paras . ');';
 
-	wp_add_inline_script( 'swiper-js', $tag, 'after' );
+	wp_add_inline_script( 'vk-swiper-script', $tag, 'after' );
 }
 
 /*
@@ -157,4 +157,29 @@ function las_customize_register_top_slide_swiper( $wp_customize ) {
 			)
 		)
 	);
+}
+
+
+function swiper_paras_json( $paras = '' ) {
+
+	$default = array(
+		// 'slidesPerView' => 3,
+		'spaceBetween' => 30,
+		'loop'         => true,
+		'autoplay'     => array(
+			'delay' => 4000,
+		),
+		'pagination'   => array(
+			'el'        => '.swiper-pagination',
+			'clickable' => true,
+		),
+		'navigation'   => array(
+			'nextEl' => '.swiper-button-next',
+			'prevEl' => '.swiper-button-prev',
+		),
+	);
+
+	$paras = wp_parse_args( $paras, $default );
+	$json  = json_encode( $paras );
+	return $json;
 }

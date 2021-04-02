@@ -38,7 +38,7 @@ function las_plugin_active() {
 		return;
 	} else {
 		// swiperを利用する時の共通ライブラリ
-		require_once 'inc/swiper/config-swiper.php';
+		require_once 'inc/vk-swiper/config.php';
 		// Lightning 専用ファイルの読み込み
 		require_once 'inc/top-slide/top-slide.php';
 	}
