@@ -49,8 +49,11 @@ function las_plugin_active() {
  */
 function las_add_admin_notice()
 {
-	$link = admin_url(). '/plugins.php';
-	$html  = '<div class="error">';
+	global $pagenow;
+	if ( $pagenow != 'index.php' ) {
+		return;
+	}
+	$html .= '<div class="error">';
 	$html .= '<ul>';
 	$html .= '<li>Lightning Advanced Slider の機能は VK Blocks Pro 及び Lightnig G3 に実装したためメンテナンスを終了します。</li>';
 	$html .= '<li><a href="' . admin_url() . '/plugins.php' . '" target="_blank">Lightnig Advanced Unit を停止</a>してください。</li>';
