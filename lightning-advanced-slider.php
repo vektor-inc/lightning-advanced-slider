@@ -50,7 +50,7 @@ function las_plugin_active() {
 function las_add_admin_notice()
 {
 	global $pagenow;
-	if ( $pagenow != 'index.php' ) {
+	if ( $pagenow != 'index.php' || ! current_user_can('administrator') ) {
 		return;
 	}
 	$html .= '<div class="error">';
