@@ -44,6 +44,9 @@ function las_plugin_active() {
 	}
 }
 
+/**
+ * 停止を勧告するメッセージを表示（国内向けにしか配布していないので翻訳なし）
+ */
 function las_add_admin_notice()
 {
 	$link = admin_url(). '/plugins.php';
