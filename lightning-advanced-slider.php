@@ -43,3 +43,20 @@ function las_plugin_active() {
 		require_once 'inc/top-slide/top-slide.php';
 	}
 }
+
+/**
+ * 停止を勧告するメッセージを表示（国内向けにしか配布していないので翻訳なし）
+ */
+function las_add_admin_notice()
+{
+	$link = admin_url(). '/plugins.php';
+	$html  = '<div class="error">';
+	$html .= '<ul>';
+	$html .= '<li>Lightning Advanced Slider の機能は VK Blocks Pro 及び Lightnig G3 に実装したためメンテナンスを終了します。</li>';
+	$html .= '<li><a href="' . admin_url() . '/plugins.php' . '" target="_blank">Lightnig Advanced Unit を停止</a>してください。</li>';
+	$html .= '<li>停止して問題のある機能については<a href="https://vws.vektor-inc.co.jp/forums" target="_blank">フォーラム</a>に投稿ください。</li>';
+	$html .= '</ul>';
+	$html .= '</div>';
+	echo $html;
+}
+add_action( 'admin_notices', 'las_add_admin_notice' );
