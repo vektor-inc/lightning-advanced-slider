@@ -33,8 +33,9 @@ define( 'VK_SLIDER_DIR', plugin_dir_path( __FILE__ ) );
 --------------------------------------------- */
 add_action( 'after_setup_theme', 'las_plugin_active' );
 function las_plugin_active() {
+	$current_theme = get_template();
 	// テーマがLightning系じゃなかったら処理を終了
-	if ( ! function_exists( 'lightning_get_theme_name' ) ) {
+	if ( 'lightning' === $current_template && 'g3' !== get_option( 'lightning_theme_generation' ) ||  'lightning-pro' === $current_template ) {
 		return;
 	} else {
 		// swiperを利用する時の共通ライブラリ
@@ -49,7 +50,7 @@ function las_plugin_active() {
  * 停止を勧告するメッセージ（国内向けにしか配布していないので翻訳なし）
  */
 function las_get_notice_body(){
-	
+
 	$html = '<ul>';
 	$html .= '<li>プラグイン「Lightning Advanced Slider」の機能は Lightning 及び VK Blocks Pro のスライダーブロックに実装済みにつきメンテナンスを終了しています。</li>';
 	$html .= '<li><a href="' . admin_url() . 'plugins.php' . '" target="_blank">プラグイン画面</a>で「Lightnig Advanced Slider」を停止してください。</li>';
