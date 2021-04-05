@@ -43,7 +43,6 @@ if ( ! class_exists( 'VK_Swiper' ) ) {
 		public static function css_tree_shaking_array( $vk_css_tree_shaking_array ){
 			global $vk_swiper_url;
 			global $vk_swiper_path;
-			var_dump($vk_swiper_path);
 			$vk_css_tree_shaking_array[] = array(
 				'id'      => 'vk-swiper-style',
 				'url'     => $vk_swiper_url . 'assets/css/swiper.min.css',
