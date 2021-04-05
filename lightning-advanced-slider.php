@@ -34,7 +34,7 @@ define( 'VK_SLIDER_DIR', plugin_dir_path( __FILE__ ) );
 add_action( 'after_setup_theme', 'las_plugin_active' );
 function las_plugin_active() {
 	$current_theme = get_template();
-	// テーマがLightning系じゃなかったら処理を終了
+// テーマがLightning でも G3 だったら処理を終了
 	if ( 'lightning' === $current_theme && 'g3' === get_option( 'lightning_theme_generation' ) ) {
 		return;
 	} elseif ( 'lightning' !== $current_theme && 'lightning-pro' !== $current_theme ) {
