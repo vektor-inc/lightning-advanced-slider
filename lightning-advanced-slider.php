@@ -37,6 +37,7 @@ function las_plugin_active() {
 // テーマがLightning でも G3 だったら処理を終了
 	if ( 'lightning' === $current_theme && 'g3' === get_option( 'lightning_theme_generation' ) ) {
 		return;
+	// テーマがLightning系じゃなかったら処理を終了
 	} elseif ( 'lightning' !== $current_theme && 'lightning-pro' !== $current_theme ) {
 		return;
 	} else {
