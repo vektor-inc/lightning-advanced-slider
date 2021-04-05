@@ -35,7 +35,9 @@ add_action( 'after_setup_theme', 'las_plugin_active' );
 function las_plugin_active() {
 	$current_theme = get_template();
 	// テーマがLightning系じゃなかったら処理を終了
-	if ( 'lightning' === $current_template && 'g3' !== get_option( 'lightning_theme_generation' ) ||  'lightning-pro' === $current_template ) {
+	if ( 'lightning' === $current_theme && 'g3' === get_option( 'lightning_theme_generation' ) ) {
+		return;
+	} elseif ( 'lightning' !== $current_theme && 'lightning-pro' !== $current_theme ) {
 		return;
 	} else {
 		// swiperを利用する時の共通ライブラリ
